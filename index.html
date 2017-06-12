@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Better Mornings</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css"></link> !-->
+        <link rel="stylesheet" href="index.css"></link>
+    </head>
+    <body>
+
+        <form id="addProductForm">
+            <input type="text" name="name" placeholder="Product Name" autofocus required></input>
+            <input type="text" name="category" placeholder="Category"></input>
+            <input type="number" name="price" min="0" step="5" max="200" value="10" required></input>
+            <button type="submit">Add Product</button>   
+        </form>
+        
+        <div class="container" id="main">
+            <div id="products">
+                <h1>General</h1>
+                <ul class="products_list" id="General"></ul>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
