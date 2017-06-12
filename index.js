@@ -36,26 +36,25 @@ class App {
     }
 
     addProduct(Product){
-        const newItem = document.createElement("li");
-        newItem.classList.add('product');
-        newItem.innerHTML = `
-            <a href="#"><img class="preview" src="http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/1113/amazon-reviews-unicorn1.jpg" />
-                <h1 class="name">${Product.name}</h1>
-                <h3 class="price">$${Product.price}</h3>
-            </a>
-        `;
-
         const list = this.checkForList(Product.category);
 
         if(list){
+            const newItem = document.createElement("li");
+            newItem.classList.add('product');
+            newItem.innerHTML = `
+                <a href="#${list.id}"><img class="preview" src="http://cdn.smosh.com/sites/default/files/ftpuploads/bloguploads/1113/amazon-reviews-unicorn1.jpg" />
+                    <h1 class="name">${Product.name}</h1>
+                    <h3 class="price">$${Product.price}</h3>
+                </a>
+            `;
+
             list.appendChild(newItem);
+            this.products.push(Product);
         }
         else{
             this.createList(Product);
             this.addProduct(Product);
         }
-
-        this.products.push(Product);
     }
 
     checkForList(categoryName){
@@ -69,6 +68,7 @@ class App {
         newList.setAttribute('id', Product.category.replace(' ', '_'));
 
         const newHeader = document.createElement('h1');
+        newHeader.classList.add('listHeading');
         newHeader.textContent = Product.category;
         this.listsHolder.insertBefore(newList, this.listsHolder.firstChild);
         this.listsHolder.insertBefore(newHeader, this.listsHolder.firstChild);

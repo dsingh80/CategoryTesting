@@ -6,6 +6,7 @@ body{
     margin: 0;
     padding: 0;
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
 }
@@ -20,30 +21,54 @@ a:hover, a:link, a:visited{
     color: inherit;
 }
 
-.dropdown_wrapper{
+
+#addProductForm{
+    width: 95%;
+    margin: 20px auto;
+}
+
+#addProductForm input{
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#addProductForm input[type=number] {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#addProductForm button {
+    padding: 10px;
+    background-color: #666 !important;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+#addProductForm label{
     display: inline-block;
+    font-size: 16px;
 }
 
-.dropdown_content{
-    display: none;
-}
+.listHeading{
+    margin: 10px 25px;
+    padding: 0;
+    font-size: 30px;
+    padding: 5px;
+    color: #FFF;
+    background-color: #2532CC;
+    
 
-.dropdown_content a{
-    display: block;
 }
-
-.dropdown_wrapper:hover .dropdown_content{
-    display: block;
-    background-color: #FF0000;
-}
-
 
 .products_list{
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
     list-style-type: none;
-    
+    margin: 0;
+    padding: 0;
 }
 
 .product{
@@ -55,6 +80,7 @@ a:hover, a:link, a:visited{
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    background-color: #FFF;
 }
 
 .product:hover{
@@ -69,7 +95,7 @@ a:hover, a:link, a:visited{
 }
 
 .product .name{
-    line-height: 1.1eem;
+    line-height: 1.4em;
     font-size: 22px;
     text-overflow: ellipsis;
     font-weight: normal;
